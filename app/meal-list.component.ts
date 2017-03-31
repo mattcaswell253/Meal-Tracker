@@ -22,13 +22,14 @@ import { Meal } from './meal.model';
 
 <div class="row">
   <div *ngFor="let currentMeal of childMealList" class="row">
-    <div class="col-md-5" (click)="editButtonHasBeenClicked(currentMeal)">
+    <div class="col-md-5">
       <span >{{currentMeal.name}} | {{currentMeal.details}}</span>
     </div>
     <div class="col-md-2">
     <span>
       {{currentMeal.calories}}
       </span>
+      <button  (click)="editButtonHasBeenClicked(currentMeal)" >Edit</button>
     </div>
 
   </div>
@@ -42,8 +43,8 @@ export class MealListComponent{
   @Input() childMealList: Meal[];
   @Output() clickSender = new EventEmitter();
 
-  // editButtonHasBeenClicked(mealToEdit: Meal) {
-  //   this.clickSender.emit(mealtoEdit);
-  // }
+  editButtonHasBeenClicked(mealToEdit: Meal) {
+    this.clickSender.emit(mealToEdit);
 
+  }
 }

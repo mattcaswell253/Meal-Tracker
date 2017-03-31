@@ -25,7 +25,7 @@ export class EditMealComponent {
   @Input() childSelectedMeal: Meal;
   @Output() doneButtonClickedSender = new EventEmitter();
 
-  doneButtonClicked() {
-    this.doneButtonClickedSender.emit();
-  }
-}
+  doneButtonClicked(){
+     this.doneButtonClickedSender.emit();
+   }
+ }
