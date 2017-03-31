@@ -11,6 +11,12 @@ body {
 .jumbotron {
   color: red;
   text-align: center;
+  font-family: 'Cinzel', serif;
+  background-image: url("http://www.conradstoltz.com/wp-content/uploads/2012/11/LIezel-Stoltz-TriLanai-FourSeasons-hotel1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: inherit;
 }
 
 .select {
