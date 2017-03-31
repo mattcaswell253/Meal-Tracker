@@ -1,0 +1,26 @@
+body {
+  background-image: url("http://cdn.wallpapersafari.com/81/35/KYmHjB.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: inherit;
+  color: white;
+  text-align: left;
+}
+
+.jumbotron {
+  color: red;
+  text-align: center;
+}
+
+.select {
+  color: red;
+}
+
+.new-input {
+  color: red;
+}
+
+.edit-input {
+  color: red;
+}

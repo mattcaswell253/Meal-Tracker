@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
   <div class="row">
-  <select (change)="onChange($event.target.value)">
+  <select class="select" (change)="onChange($event.target.value)">
      <option value="allMeals">All Meals</option>
      <option value="highCal">High Calorie(500+)</option>
      <option value="lowCal" selected="selected">Low Calorie(under 500)</option>
@@ -30,7 +30,7 @@ import { Meal } from './meal.model';
     <span>
       {{currentMeal.calories}}
       </span>
-      <button  (click)="editButtonHasBeenClicked(currentMeal)" >Edit</button>
+      <button class="btn btn-success" (click)="editButtonHasBeenClicked(currentMeal)" >Edit</button>
     </div>
 
   </div>
