@@ -6,8 +6,9 @@ import { Meal } from './meal.model';
   template: `
   <div class="row">
   <select (change)="onChange($event.target.value)">
+     <option value="allMeals">All Meals</option>
      <option value="highCal">High Calorie(500+)</option>
-     <option value="lowCal">Low Calorie(under 500)</option>
+     <option value="lowCal" selected="selected">Low Calorie(under 500)</option>
    </select>
    <div id="tap-board">
    <div class="row">
@@ -21,7 +22,7 @@ import { Meal } from './meal.model';
    <hr>
 
 <div class="row">
-  <div *ngFor="let currentMeal of childMealList" class="row">
+  <div *ngFor="let currentMeal of childMealList | count:filterByCount" class="row">
     <div class="col-md-5">
       <span >{{currentMeal.name}} | {{currentMeal.details}}</span>
     </div>
@@ -43,8 +44,15 @@ export class MealListComponent{
   @Input() childMealList: Meal[];
   @Output() clickSender = new EventEmitter();
 
+  findCount(currentMeal){}
+    filterByCount: string = "allMeals";
+
+
   editButtonHasBeenClicked(mealToEdit: Meal) {
     this.clickSender.emit(mealToEdit);
+  }
 
+  onChange(optionFromMenu) {
+  this.filterByCount = optionFromMenu;
   }
 }
